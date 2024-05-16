@@ -1,4 +1,4 @@
-package com.user.model;
+package com.samweb.model;
 
 public class UserInfo {
 
@@ -7,15 +7,25 @@ public class UserInfo {
 	String password;
 	String profession;
 	int age;
+	long phoneNumber;
 
-	
-	public UserInfo(String fullName, String email, String password, String profession, int age) {
+
+	public UserInfo(String fullName, String email, String password, String profession, int age, long phoneNumber) {
 		super();
 		this.fullName = fullName;
 		this.email = email;
 		this.password = password;
 		this.profession = profession;
 		this.age = age;
+		this.phoneNumber = phoneNumber;
+	}
+	
+	public long getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 	
 	public String getFullName() {

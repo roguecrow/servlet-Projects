@@ -32,6 +32,16 @@
                 
                 <label for="confirmPassword">Confirm Password:</label><br>
                 <input type="password" id="confirmPassword" name="confirmPassword" required minlength="8" maxlength="16" placeholder="Enter your password again"><br>
+                
+                <label for="phone">Mobile Number:</label><br>
+                <input type="number" id="phone" name="phone"placeholder="Enter your mobile number"><br>
+                
+                <label for="age">Enter age:</label><br>
+                <input type="number" id="age" name="age" required  placeholder="Enter your age"  min="1" max="100"><br>
+                
+                <label for="profession">profession:</label><br>
+                <input type="text" id="profession" name="profession" required  placeholder="Enter your profession"><br>
+            
                 <button type="submit">Register</button>
                 </form>
 <script>
