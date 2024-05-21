@@ -20,6 +20,10 @@ public class UserInfo {
 		this.phoneNumber = phoneNumber;
 	}
 	
+	public UserInfo() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public long getPhoneNumber() {
 		return phoneNumber;
 	}
