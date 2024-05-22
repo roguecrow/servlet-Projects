@@ -97,26 +97,37 @@
       <table>
         <thead>
           <tr>
+            <th>S.No</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Profession</th>
+            <!-- <th>Profession</th>
             <th>Age</th>
-            <th>Phone Number</th>
+            <th>Phone Number</th> -->
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
           <% 
-            ArrayList<UserInfo> userRegister = (ArrayList<UserInfo>) request.getAttribute("userRegister");
+         
+          ArrayList<UserInfo> userRegister = (ArrayList<UserInfo>) request.getAttribute("userRegister");
             if (userRegister != null) {
               for (UserInfo info : userRegister) { %>
                 <tr>
+                  <td><%= userRegister.indexOf(info)+1%></td>
                   <td><%= info.getFullName() %></td>
                   <td><%= info.getEmail() %></td>
-                  <td><%= info.getProfession() %></td>
+                  <%-- <td><%= info.getProfession() %></td>
                   <td><%= info.getAge() %></td>
-                  <td><%= info.getPhoneNumber() %></td>
-                  <td><button class="edit-btn">Edit</button> <button class="delete-btn">Delete</button></td>
+                  <td><%= info.getPhoneNumber() %></td> --%>
+                  <td>
+                  <form action="activeServlet" method="post">
+                        <input type="hidden" name="action" value="delete">
+                        <input type="hidden" name="deleteid" value="<%= info.getId() %>">
+                        <button class="delete-btn" type="submit">Delete</button>
+                    </form><br>
+                        <input type="hidden" name="action" value="edit">
+                         <input type="hidden" name="editid" value="<%= info.getId() %>">
+                         <button class="edit-btn" type="button" onclick="location.href = 'update_user.jsp?editid=<%= info.getId() %>'">Edit</button>
                 </tr>
               <% } 
             } %>

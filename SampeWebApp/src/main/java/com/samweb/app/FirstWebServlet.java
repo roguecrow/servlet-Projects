@@ -57,7 +57,11 @@ public class FirstWebServlet extends HttpServlet {
 		userData.setPassword(password);
 		try {
 			DbManager manage = new DbManager();
-			manage.insertUserDetails(userData);
+			if(userData.getEmail()!= null && userData.getFullName()!= null && userData.getPassword()!=null) {
+				manage.createUser(userData);
+				System.out.println("User Register: " +  manage.viewUserDetails());
+				request.setAttribute("userRegister", manage.viewUserDetails());
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -65,10 +69,9 @@ public class FirstWebServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// Create a User object to hold the user details
 //		saver.addUser(firstName,email,password,profession,Integer.parseInt(age),Long.parseLong(mobileNumber));
-//		request.setAttribute("userRegister", saver.getUserRegister());
-//		request.getRequestDispatcher("user_profile.jsp").forward(request, response);
+
+		request.getRequestDispatcher("user_profile.jsp").forward(request, response);
 	}
 
 	/**
@@ -76,7 +79,36 @@ public class FirstWebServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		System.out.println("Post called");
+		String action = request.getParameter("action");
+		String firstName = request.getParameter("name");
+		String email = request.getParameter("email");
+		System.out.println("id :"+ request.getParameter("editid"));
+		System.out.println(action+" " + firstName + " "+ email);
+		try {
+			DbManager manage = new DbManager();
+	        if (action != null) {
+	            switch (action) {
+	                case "edit":
+	                manage.updateUserDetails(Integer.parseInt(request.getParameter("editid")), firstName, email);
+	                    break;
+	                case "delete":
+	                manage.deleteUserDetails(Integer.parseInt(request.getParameter("deleteid")));
+	                    break;
+	            }
+				request.setAttribute("userRegister", manage.viewUserDetails());
+	    		request.getRequestDispatcher("user_profile.jsp").forward(request, response);
+
+	        }
+
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
 }

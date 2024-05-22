@@ -1,7 +1,7 @@
 package com.samweb.model;
 
 public class UserInfo {
-
+	int id;
 	String fullName;
 	String email;
 	String password;
@@ -10,18 +10,24 @@ public class UserInfo {
 	long phoneNumber;
 
 
-	public UserInfo(String fullName, String email, String password, String profession, int age, long phoneNumber) {
-		super();
+	public UserInfo(int id,String fullName, String email, String password) {
+		this.id = id;
 		this.fullName = fullName;
 		this.email = email;
 		this.password = password;
-		this.profession = profession;
-		this.age = age;
-		this.phoneNumber = phoneNumber;
 	}
 	
 	public UserInfo() {
 		// TODO Auto-generated constructor stub
+	}
+
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public long getPhoneNumber() {
