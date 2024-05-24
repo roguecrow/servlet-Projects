@@ -98,7 +98,7 @@ public class FirstWebServlet extends HttpServlet {
 	            }
 				request.setAttribute("userRegister", manage.viewUserDetails());
 	    		request.getRequestDispatcher("user_profile.jsp").forward(request, response);
-
+	    		//response.sendRedirect(action)
 	        }
 
 		} catch (ClassNotFoundException e) {

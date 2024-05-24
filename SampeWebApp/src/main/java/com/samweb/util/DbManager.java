@@ -70,14 +70,22 @@ public class DbManager {
 		    System.out.println("Affected rows =" + rowsAffected);
 		}
 		
-		public void findUserName(int id ,String name,String email) throws SQLException {
-		    String updateUser = "UPDATE user_details SET full_name = ?, email = ? WHERE user_id = ?";
-		    PreparedStatement prepareStatement = connect.prepareStatement(updateUser);
-		    prepareStatement.setString(1, name);
-		    prepareStatement.setString(2, email);
-		    prepareStatement.setInt(3, id);
-		    int rowsAffected = prepareStatement.executeUpdate();
-		    System.out.println("Affected rows =" + rowsAffected);
+		public ArrayList<UserInfo> findUserName(String name) throws SQLException {
+			ArrayList<UserInfo> searchedUser= new ArrayList<>();
+		    String searchUser = "SELECT * FROM user_details WHERE full_name LIKE ?";
+		    PreparedStatement prepareStatement = connect.prepareStatement(searchUser);
+		    prepareStatement.setString(1, name+"%");
+			ResultSet likeValue = prepareStatement.executeQuery();
+	        while (likeValue.next()) {
+	        	int id = likeValue.getInt("user_id");
+	        	String firstName = likeValue.getString("full_name");
+	        	String email = likeValue.getString("email");
+	        	String password = likeValue.getString("password");
+	        	System.out.println(firstName+" " + email+" " + password);
+	        	UserInfo userData =new UserInfo(id,firstName,email,password);
+	        	searchedUser.add(userData);
+	        }
+			return searchedUser;
 		}
 
 	 

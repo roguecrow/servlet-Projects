@@ -6,6 +6,12 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+ 
   <title>User Profile</title>
   <style>
     body {
@@ -87,13 +93,42 @@
       justify-content: center;
        align-items: center;
        padding-left: 220px;
-    } 
+    }
+    .search-form {
+    width:  400px;
+    padding: 10px;
+    padding-bottom: 20px;
+    
+}
+.search-bar {
+    border-radius: 20px;
+}
+.submit-button {
+    border-radius: 20px;
+}
+.btn-black {
+    color: #000; 
+    background-color: #0000; 
+    border-color: #000;
+}
+
+.btn-black:hover {
+    color: #fff; 
+    background-color: #000; 
+    border-color: #000;
+}
   </style>
 </head>
 <body>
   <div class="container">
     <div class="details">
       <h2>User Details</h2>
+      <form class="d-flex search-form" role="search" action="SearchServlet" method="GET">
+      <input class="form-control me-2 search-bar" type="search" name="query" placeholder="Search User..." aria-label="Search">
+      <button class="btn btn-outline-success submit-button btn-black" type="submit">
+      <i class="fas fa-search"></i>
+      </button>
+      </form>  
       <table>
         <thead>
           <tr>

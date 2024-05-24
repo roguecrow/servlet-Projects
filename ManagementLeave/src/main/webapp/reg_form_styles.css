@@ -44,7 +44,7 @@ h1 {
 input[type="text"], 
 input[type="email"],
 input[type="password"],
-input[type="date"],
+input[type="department"],
 input[type="number"], 
 button[type="submit"] {
     width: 150%;
@@ -104,6 +104,7 @@ select:focus {
     text-decoration: underline;
 }
 .container {
+	
     display: flex;
 }
 

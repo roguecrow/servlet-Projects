@@ -13,6 +13,20 @@
      
         <title>Registration Form</title>
         <link rel="icon" type="image/x-icon" href="C:\Users\babu3560\Desktop\Registration form\images\favicon.ico">
+        <style>
+        input[type="text"], 
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        input[type="number"], 	
+        button[type="submit"] {
+        width: 150%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        }
+        </style>
     </head>
     <body>
         <div class="container">
