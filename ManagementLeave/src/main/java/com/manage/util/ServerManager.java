@@ -18,13 +18,14 @@ public class ServerManager {
     }
     
 	public int userRegisteration(LeaveDetails details) throws ClassNotFoundException, SQLException {
-	    String addEmployee = "INSERT INTO emp_credentials (emp_id, role_id, username, dept_id)"
-	    		+ "VALUES (?, ?, ?, ?)";
+	    String addEmployee = "INSERT INTO emp_credentials (emp_id, role_id, username, dept_id,dept_name)"
+	    		+ "VALUES (?, ?, ?, ?, ?)";
 	    PreparedStatement prepareStatement = connect.prepareStatement(addEmployee);
 	    prepareStatement.setInt(1,Integer.parseInt(details.getEmployeeId()));
 	    prepareStatement.setInt(2,details.getRoleId());
 	    prepareStatement.setString(3, details.getUsername());
 	    prepareStatement.setInt(4, details.getDeptId());
+	    prepareStatement.setString(5, details.getDeptName());
 	    int rows = prepareStatement.executeUpdate();
 	    System.out.println("affected row :" + rows);
 		return rows;

@@ -37,8 +37,9 @@ public class DbManager {
 	 
 	 public ArrayList<UserInfo> viewUserDetails() throws SQLException {
 			ArrayList<UserInfo> userRegister= new ArrayList<>();
-		 String viewUser = "Select user_id,full_name,email,password from user_details";
+		 String viewUser = "Select user_id,full_name,email,password from user_details where is_active = ?";
 		 PreparedStatement prepareStatement = connect.prepareStatement(viewUser);
+		 prepareStatement.setBoolean(1,true);
 			ResultSet rows = prepareStatement.executeQuery();
 	        while (rows.next()) {
 	        	int id = rows.getInt("user_id");
@@ -53,9 +54,10 @@ public class DbManager {
 	 }
 	 
 	 public void deleteUserDetails(int id) throws SQLException {
-		    String deleteUser = "DELETE FROM user_details WHERE user_id = ?";
+		    String deleteUser = "UPDATE user_details SET is_active = ? WHERE user_id = ?";
 		    PreparedStatement prepareStatement = connect.prepareStatement(deleteUser);
-		    prepareStatement.setInt(1, id);
+		    prepareStatement.setBoolean(1, false);
+		    prepareStatement.setInt(2, id);
 		    int rowsAffected = prepareStatement.executeUpdate();
 		    System.out.println("Affected rows =" + rowsAffected);
 		}
@@ -72,9 +74,10 @@ public class DbManager {
 		
 		public ArrayList<UserInfo> findUserName(String name) throws SQLException {
 			ArrayList<UserInfo> searchedUser= new ArrayList<>();
-		    String searchUser = "SELECT * FROM user_details WHERE full_name LIKE ?";
+		    String searchUser = "SELECT * FROM user_details WHERE full_name LIKE ?  and is_active= ?";
 		    PreparedStatement prepareStatement = connect.prepareStatement(searchUser);
 		    prepareStatement.setString(1, name+"%");
+		    prepareStatement.setBoolean(2, true);
 			ResultSet likeValue = prepareStatement.executeQuery();
 	        while (likeValue.next()) {
 	        	int id = likeValue.getInt("user_id");
@@ -87,6 +90,4 @@ public class DbManager {
 	        }
 			return searchedUser;
 		}
-
-	 
 }

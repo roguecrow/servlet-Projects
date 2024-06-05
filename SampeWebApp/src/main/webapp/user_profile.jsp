@@ -90,6 +90,7 @@
     background-color: #4250a0;
     }
     .details .add-line {
+      padding-top:50px;
       justify-content: center;
        align-items: center;
        padding-left: 220px;
@@ -117,6 +118,24 @@
     background-color: #000; 
     border-color: #000;
 }
+.button-row {
+    display: flex;
+    gap: 10px; /* Adjust the gap between buttons as needed */
+}
+
+.button-form {
+    margin: 0; /* Ensure no extra margin around forms */
+}
+.d-container {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    padding: 20px; /* Optional: add padding to the container */
+}
+
+.custom-btn {
+    padding: 10px 20px; /* Adjust padding as needed */
+}
+
   </style>
 </head>
 <body>
@@ -128,7 +147,18 @@
       <button class="btn btn-outline-success submit-button btn-black" type="submit">
       <i class="fas fa-search"></i>
       </button>
-      </form>  
+      </form>
+      <div class="d-container">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle custom-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Order By
+        </button>
+        <ul class="dropdown-menu">
+            <li><button class="dropdown-item" type="button">Ascending Order</button></li>
+            <li><button class="dropdown-item" type="button">Descending Order</button></li>
+        </ul>
+        </div>
+        </div>
       <table>
         <thead>
           <tr>
@@ -155,14 +185,16 @@
                   <td><%= info.getAge() %></td>
                   <td><%= info.getPhoneNumber() %></td> --%>
                   <td>
-                  <form action="activeServlet" method="post">
+                  <div class="button-row">
+                   <form action="activeServlet" method="post">
                         <input type="hidden" name="action" value="delete">
                         <input type="hidden" name="deleteid" value="<%= info.getId() %>">
                         <button class="delete-btn" type="submit">Delete</button>
-                    </form><br>
+                    </form>	
                         <input type="hidden" name="action" value="edit">
                          <input type="hidden" name="editid" value="<%= info.getId() %>">
                          <button class="edit-btn" type="button" onclick="location.href = 'update_user.jsp?editid=<%= info.getId() %>'">Edit</button>
+                  </div>
                 </tr>
               <% } 
             } %>

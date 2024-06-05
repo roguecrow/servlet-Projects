@@ -1,30 +1,25 @@
-package com.samweb.app;
+package com.manage.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.samweb.model.UserInfo;
-import com.samweb.util.DbManager;
-
 /**
- * Servlet implementation class UpdateServlet
+ * Servlet implementation class LogoutServlet
  */
-@WebServlet("/SearchServlet")
-public class SearchViewServlet extends HttpServlet {
+@WebServlet("/LogoutServlet")
+public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchViewServlet() {
+    public LogoutServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,24 +29,7 @@ public class SearchViewServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("From search get");
-		String queryString = request.getParameter("query");
-		System.out.println("Search query: " + queryString);
-		try {
-			DbManager manage = new DbManager();
-		
-			if(queryString != null) {
-				request.setAttribute("userRegister", manage.findUserName(queryString));
-	    		request.getRequestDispatcher("user_profile.jsp").forward(request, response);
-			}
-
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -59,7 +37,14 @@ public class SearchViewServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		   HttpSession session = request.getSession(false); // Fetch the session, if it exists
+	        if (session != null) {
+	            session.invalidate(); // Invalidate the session
+	            System.out.println("Invalidated");
+	        }
+	        response.sendRedirect("login.jsp"); // Redirect to the login page
 	}
 
 }

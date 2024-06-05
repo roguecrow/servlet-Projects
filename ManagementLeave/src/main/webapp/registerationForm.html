@@ -37,26 +37,33 @@
                     <label for="name">User Name:</label><br>
                     <input type="text" id="name" name="name" required><br>
                     
-                    <label for="password">Password:</label><br>
+                    <label for="password">Emp ID:</label><br>
                     <input type="password" id="password" name="password" required><br>
                     
-                    <label for="confirmPassword">Confirm Password:</label><br>
+                    <label for="confirmPassword">Confirm Emp ID:</label><br>
                     <input type="password" id="confirmPassword" name="confirmPassword" required><br>
                     
                     <label for="department">Department:</label><br>
                     <select id="department" name="department" required>
                         <option value="" disabled selected>Select your department</option>
-                        <option value="HR">Human Resources</option>
-                        <option value="IT">Information Technology</option>
-                        <option value="Finance">Finance</option>
-                        <option value="Marketing">Marketing</option>
-                        <option value="Sales">Sales</option>
+                        <option value="1">Sales</option>
+                        <option value="2">Marketing</option>
+                        <option value="3">Human Resources</option>
+                        <option value="4">Finance</option>
                     </select><br><br>
         
-                    <button type="submit" onclick="location.href = 'regDone.html'">Register</button>
+                    <button type="submit">Register</button>
                 </form>
                 <h5 class="sign-navigator">Already have an Account? <a href="login_page.html">Sign In</a></h5>
             </div>
         </div>
+        <script>
+        window.onload = function() {
+            var errorMessage = '<%= request.getAttribute("errorMessage") %>';
+            if (errorMessage) {
+                alert(errorMessage);
+            }
+        };
+    </script>
     </body>
 </html>
