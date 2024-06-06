@@ -130,8 +130,8 @@ select:focus {
     padding-left: 120px;
     font-optical-sizing: auto;
     font-style: normal;
-    color: rgba(0, 0, 0, 0); /* Makes the text transparent */
-    opacity: 0; /* Another way to ensure the text is transparent */
+    color: rgba(0, 0, 0, 0);
+    opacity: 0; 
 }
 
   

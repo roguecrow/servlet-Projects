@@ -26,53 +26,53 @@
     <title>Home Screen</title>
     <style>
         .profile-dropdown {
-            margin-right: 20px; /* Adjust this value as needed to move the icon left */
+            margin-right: 20px; 
         }
         .profile-container {
             display: flex;
             align-items: center;
-            border-radius: 20px; /* Rounded border */
-            background-color: #f8f9fa; /* Background color */
-            border: 1px solid #ddd; /* Light rounded border */
-            padding: 5px 10px; /* Padding for the container */
-            color: black; /* Black color for profile icon and name */
+            border-radius: 20px; 
+            background-color: #f8f9fa; 
+            border: 1px solid #ddd; 
+            padding: 5px 10px;
+            color: black; 
         }
         .profile-container:hover {
-            color: blue; /* Change to blue on hover */
+            color: blue; 
         }
         .profile-icon {
-            font-size: 1.5em; /* Adjust size as needed */
+            font-size: 1.5em; 
             border-radius: 50%;
             padding: 5px;
-            background-color: #fff; /* Background color for the icon */
-            margin-right: 10px; /* Space between icon and name */
+            background-color: #fff; 
+            margin-right: 10px; 
         }
         .username {
-            font-size: 1em; /* Adjust size as needed */
-            font-weight: bold; /* Bold text */
+            font-size: 1em;
+            font-weight: bold; 
         }
         .dropdown-item i {
-            margin-right: 10px; /* Space between icon and text */
+            margin-right: 10px; 
         }
         .navbar-nav {
-            margin-left: 20px; /* Move nav items to the right */
+            margin-left: 20px; 
         }
         .container-wrapper {
             padding: 20px;
-            height: calc(100vh - 72px); /* Adjust for navbar height */
+            height: calc(100vh - 72px);
         }
         .left-container, .right-container {
-            height: 100%; /* Take full height of the parent */
+            height: 100%; 
         }
         .left-container {
-            position: relative; /* Add relative positioning */
+            position: relative; 
             border-radius: 8px;
             flex: 2;
             background-color: #ffffff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            margin-right: 20px; /* Add margin to create space */
-            overflow-y: auto; /* Enable vertical scrolling */
+            margin-right: 20px; 
+            overflow-y: auto; 
         }
         .right-container {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -82,67 +82,67 @@
             padding: 20px;
         }
         .card {
-            margin-bottom: 20px; /* Add space between cards */
-            border-radius: 10px; /* Rounded corners for the cards */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow to the cards */
-            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition on hover */
+            margin-bottom: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .card:hover {
-            transform: translateY(-5px); /* Move the card up slightly on hover */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             cursor: pointer;
         }
         .card-body {
-            padding: 20px; /* Add padding inside the card body */
+            padding: 20px; 
         }
         .card-title {
-            font-size: 20px; /* Customize the font size of the card title */
-            margin-bottom: 10px; /* Add space below the card title */
+            font-size: 20px; 
+            margin-bottom: 10px; 
         }
         .card-text {
-            font-size: 16px; /* Customize the font size of the card text */
+            font-size: 16px; 
         }
         .add-exam-button {
-            position: absolute; /* Position the button absolutely */
-            top: 20px; /* Adjust as needed */
-            right: 20px; /* Adjust as needed */
+            position: absolute; 
+            top: 20px; 
+            right: 20px; 
         }
         .right-container {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
     flex: 1;
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
     padding: 20px;
-    overflow-y: auto; /* Enable vertical scrolling if content overflows */
-    transition: box-shadow 0.3s; /* Smooth shadow transition on hover */
+    overflow-y: auto;
+    transition: box-shadow 0.3s; 
 }
 
 .right-container:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); 
 }
 
 #examDetails {
-    background-color: #f8f9fa; /* Light gray background for the details section */
-    border-radius: 8px; /* Rounded corners */
-    padding: 15px; /* Padding inside the details section */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for the details section */
-    transition: background-color 0.3s; /* Smooth background color transition on hover */
+    background-color: #f8f9fa; 
+    border-radius: 8px; 
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s; 
 }
 
 #examDetails h2 {
-    font-size: 24px; /* Larger font size for the heading */
-    margin-bottom: 15px; /* Space below the heading */
-    color: #333; /* Darker text color for the heading */
+    font-size: 24px; 
+    margin-bottom: 15px;
+    color: #333;
 }
 
 #examDetails p {
-    font-size: 16px; /* Font size for the paragraph */
-    line-height: 1.5; /* Line height for better readability */
-    color: #666; /* Gray color for the paragraph text */
+    font-size: 16px; 
+    line-height: 1.5; 
+    color: #666; 
 }
 
 #examDetails:hover {
-    background-color: #e9ecef; /* Slightly darker background on hover */
+    background-color: #e9ecef; 
 }
 
 .search-form {
@@ -188,20 +188,33 @@ body {
 }
 
 .navbar-nav .nav-link:hover {
-    color: blue; /* Change to the desired color on hover */
+    color: blue; 
 }
-   .update-button {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-        }
+   .update-button, .apply-now-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+    .alert {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      width: 300px;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .alert.show {
+      opacity: 1;
+    }
+
     </style>
 </head>
 <body>
 <%
-response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
-response.setHeader("Expires", "0"); // Proxies.
+response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); 
+response.setHeader("Pragma", "no-cache");
+response.setHeader("Expires", "0"); 
 
 if (session == null || session.getAttribute("userDetails") == null) {
     response.sendRedirect("login.jsp");
@@ -210,30 +223,21 @@ if (session == null || session.getAttribute("userDetails") == null) {
 
 UserDetails userDetails = (UserDetails) session.getAttribute("userDetails");
 String userName = userDetails != null ? userDetails.getUsername() : "User";
-int roleId = userDetails != null ? userDetails.getRoleId() : 1; // Default to student if role is not set
+int roleId = userDetails != null ? userDetails.getRoleId() : 1; 
 %>
 
-<div id="nav-placeholder"></div>
-<% String message = request.getParameter("message"); %>
-<% if (message != null) { %>
-    <div class="message">
-        <% if (message.equals("examAddedSuccessfully")) { %>
-            <p>Exam added successfully!</p>
-        <% } else if (message.equals("errorAddingExam")) { %>
-            <p>Something went wrong. Please try again later.</p>
-        <% } %>
-    </div>
-<% } %>
+<div id="alertMessage" class="alert" role="alert"></div>
 
+<div id="nav-placeholder"></div>
 <div class="container-fluid container-wrapper">
     <div class="row h-100">
         <div class="col-lg-8 col-md-7 col-sm-12 left-container">
             <% if (roleId == 0) { %>
-            <button class="btn btn-primary add-exam-button" data-toggle="modal" data-target="#addExamModal">Add New Exam</button>
+            <a href="addExam.jsp" class="btn btn-primary add-exam-button">Add New Exam</a>
             <% } %>
             <h2>Exams</h2>
             <%
-            // Retrieve exam details from the database
+           
             DbManager dbManager = new DbManager();
             List<ExamDetails> exams = null;
             try {
@@ -260,32 +264,31 @@ int roleId = userDetails != null ? userDetails.getRoleId() : 1; // Default to st
                 <h2>Exam Details</h2>
                 <p>Select an exam to view details.</p>
             </div>
-             <div class="update-button">
+            <% if (roleId == 0) { %>
+            <div class="update-button">
                 <button class="btn btn-info">Update</button>
             </div>
+            <% } else { %>
+            <button type="button" class="btn btn-primary btn-lg apply-now-button">Apply Now</button>
+           <% } %>
+             
         </div>
     </div>
 </div>
 <div id="addExamModalPlaceholder"></div>
 <script>
-$(function(){
-    // Load navbar content
+  $(function() {
     $("#nav-placeholder").load("navbar.jsp");
 
-    // Load modal content and handle click events
     $("#addExamModalPlaceholder").load("AddNewExamModel.jsp", function() {
-        // JavaScript to handle click event on cards
         $(".card").click(function(){
-            // Get the exam ID from the card's ID
-            var examId = $(this).attr("id").substring(4); // Remove "exam" from the ID
+            var examId = $(this).attr("id").substring(4); 
             
-            // Retrieve exam details from the server using AJAX
             $.ajax({
-                url: "GetExamDetailsServlet", // Replace with the servlet URL that retrieves exam details
+                url: "GetExamDetailsServlet",
                 method: "GET",
                 data: {examId: examId},
                 success: function(response) {
-                    // Update the exam details container with the retrieved details
                     $("#examDetails").html(response);
                 },
                 error: function(xhr, status, error) {
@@ -294,10 +297,43 @@ $(function(){
             });
         });
     });
-    
-});
-</script>
-</body>
 
+    <% String message = request.getParameter("message"); %>
+    <% if (message != null) { %>
+      var messageType = "";
+      var alertMessage = "";
+
+      <% if (message.equals("examAddedSuccessfully")) { %>
+        messageType = "success";
+        alertMessage = "Exam added successfully!";
+      <% } else if (message.equals("errorAddingExam")) { %>
+        messageType = "error";
+        alertMessage = "Something went wrong. Please try again later.";
+      <% } %>
+
+      showAlert(alertMessage, messageType);
+    <% } %>
+
+    function showAlert(message, type) {
+      if (message) {
+        var alertElement = $('#alertMessage');
+        alertElement.text(message);
+        if (type === 'success') {
+          alertElement.removeClass('alert-danger').addClass('alert-success');
+        } else {
+          alertElement.removeClass('alert-success').addClass('alert-danger');
+        }
+        alertElement.addClass('show');
+        setTimeout(function() {
+          alertElement.fadeOut('slow', function() {
+            $(this).remove();
+          });
+        }, 3000);
+      }
+    }
+  });
+</script>
+
+</body>
 </html>
 

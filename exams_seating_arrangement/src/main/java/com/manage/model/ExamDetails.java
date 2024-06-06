@@ -8,8 +8,8 @@ public class ExamDetails {
     private String examName;
     private String description;
     private Date examDate;
-    private Timestamp applicationStartDate;
-    private Timestamp applicationEndDate;	
+    private Date applicationStartDate;
+    private Date applicationEndDate;	
 	
 	
     public int getExamId() {
@@ -44,7 +44,7 @@ public class ExamDetails {
 		this.examDate = examDate;
 	}
 
-	public Timestamp getApplicationStartDate() {
+	public Date getApplicationStartDate() {
 		return applicationStartDate;
 	}
 
@@ -52,7 +52,7 @@ public class ExamDetails {
 		this.applicationStartDate = applicationStartDate;
 	}
 
-	public Timestamp getApplicationEndDate() {
+	public Date getApplicationEndDate() {
 		return applicationEndDate;
 	}
 
@@ -68,8 +68,5 @@ public class ExamDetails {
         this.applicationStartDate = applicationStartDate;
         this.applicationEndDate = applicationEndDate;
     }
-
-    // Getters and setters
-    // You can generate them using your IDE or write them manually
 }
 

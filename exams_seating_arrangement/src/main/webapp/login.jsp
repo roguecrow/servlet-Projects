@@ -45,7 +45,7 @@
         </div>
         <div class="image-container">
         <h1>Lets get you an Account</h1>
-            <!-- Place your image here -->
+            
         </div>
     </div>
 </body>

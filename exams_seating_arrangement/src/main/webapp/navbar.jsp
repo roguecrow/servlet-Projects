@@ -15,8 +15,7 @@ if (session == null || session.getAttribute("userDetails") == null) {
 
 UserDetails userDetails = (UserDetails) session.getAttribute("userDetails");
 String userName = userDetails != null ? userDetails.getUsername() : "User";
-int roleId = userDetails != null ? userDetails.getRoleId() : 1; // Default to student if role is not set
-
+int roleId = userDetails != null ? userDetails.getRoleId() : 1; 
 %>
 <header>
     <nav class="navbar navbar-expand-lg custom-navbar">
@@ -55,11 +54,11 @@ int roleId = userDetails != null ? userDetails.getRoleId() : 1; // Default to st
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser1">
                         <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle"></i> Profile</a></li>
                         <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a></li>
-                        <li>
-                            <form action="LogoutServlet" method="post" style="display: inline;">
+                        <div class="dropdown-divider"></div>
+                        <li><form action="LogoutServlet" method="post" style="display: inline;">
                                 <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Log out</button>
                             </form>
-                        </li>
+                            </li>
                     </ul>
                 </div>
             </div>

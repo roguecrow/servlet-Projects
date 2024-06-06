@@ -63,7 +63,7 @@ public class SignInServlet extends HttpServlet {
                     if (manage.findUser(email, password,details,false)) {
                     	System.out.println("account already there");
                         request.setAttribute("errorMessage", "Account already there.");
-                        // Forward the request back to the login page
+                        
                         request.getRequestDispatcher("registerPage.jsp").forward(request, response);
                     }
                     else  {
@@ -81,9 +81,9 @@ public class SignInServlet extends HttpServlet {
                         session.setAttribute("userDetails", details);
                         response.sendRedirect("HomePage.jsp");
                     } else {
-                        // Set an attribute for the error message
+                        
                         request.setAttribute("errorMessage", "Invalid email or password. Please try again.");
-                        // Forward the request back to the login page
+                        
                         request.getRequestDispatcher("login.jsp").forward(request, response);
                     }
                     break;

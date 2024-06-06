@@ -30,7 +30,6 @@ public class GetExamDetailsServlet extends HttpServlet {
                 e.printStackTrace();
             }
             
-            // Generate HTML for displaying exam details
             out.println("<h2>" + examDetails.getExamName() + "</h2>");
             out.println("<p><strong>Description:</strong> " + examDetails.getDescription() + "</p>");
             out.println("<p><strong>Exam Date:</strong> " + examDetails.getExamDate() + "</p>");
@@ -39,7 +38,6 @@ public class GetExamDetailsServlet extends HttpServlet {
         }
     }
 
-    // Handles the HTTP <code>GET</code> method.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -51,7 +49,7 @@ public class GetExamDetailsServlet extends HttpServlet {
 		}
     }
 
-    // Handles the HTTP <code>POST</code> method.
+  
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

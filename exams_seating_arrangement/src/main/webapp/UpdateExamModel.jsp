@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
-<!-- Add New Exam Modal -->
 <div class="modal fade" id="addExamModal" tabindex="-1" role="dialog" aria-labelledby="addExamModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -11,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="addExamForm" action="AddExam" method="post"> <!-- Added action attribute -->
+                <form id="addExamForm" action="AddExam" method="post"> 
                     <div class="form-group">
                         <label for="examName">Exam Name</label>
                         <input type="text" class="form-control" id="examName" name="examName" required>
